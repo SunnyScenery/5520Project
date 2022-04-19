@@ -22,8 +22,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.pacman.MentAlly.R;
-import com.pacman.MentAlly.ui.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.R;
+import edu.neu.numad22sp_bdd_project.home.HomeActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +36,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private com.pacman.MentAlly.ui.register.RegisterViewModel registerViewModel;
+    private RegisterViewModel registerViewModel;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private EditText nameEditText;
@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        registerViewModel = new ViewModelProvider(this, new com.pacman.MentAlly.ui.register.RegisterViewModelFactory()).get(com.pacman.MentAlly.ui.register.RegisterViewModel.class);
+        registerViewModel = new ViewModelProvider(this, new RegisterViewModelFactory()).get(RegisterViewModel.class);
 
         //initialize cloud firestore database and authentication
         db = FirebaseFirestore.getInstance();

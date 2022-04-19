@@ -1,4 +1,4 @@
-package com.pacman.MentAlly.ui.login;
+package edu.neu.numad22sp_bdd_project.login;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import android.util.Patterns;
 
-import com.pacman.MentAlly.R;
+import edu.neu.numad22sp_bdd_project.R;
 
 public class LoginViewModel extends ViewModel {
 

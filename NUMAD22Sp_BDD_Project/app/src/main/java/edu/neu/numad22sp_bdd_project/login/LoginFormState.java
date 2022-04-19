@@ -1,4 +1,4 @@
-package com.pacman.MentAlly.ui.login;
+package edu.neu.numad22sp_bdd_project.login;
 
 import androidx.annotation.Nullable;
 
