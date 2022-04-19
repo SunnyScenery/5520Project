@@ -8,5 +8,9 @@
     <string name="invalid_DOB">Must be a valid date in the format DD/MM/YYYY</string>
     <string name="invalid_gender">Please choose a gender</string>
     <string name="invalid_password">Password must be 5 characters at least</string>
+
+    <!--Sign in-->
+    <string name="sign_in">Sign in</string>
+    <string name="no_account">Don\'t have account? Sign up here</string>
 </resources>
 

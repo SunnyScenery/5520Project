@@ -43,10 +43,10 @@ public class LoginActivity extends AppCompatActivity {
         //initialize cloud firestore database
         mAuth = FirebaseAuth.getInstance();
 
-        final EditText usernameEditText = findViewById(R.id.username);
-        final EditText passwordEditText = findViewById(R.id.password);
-        final Button loginButton = findViewById(R.id.login);
-        final Button signUpText = findViewById(R.id.register);
+        final EditText username_EditText = findViewById(R.id.username);
+        final EditText password_EditText = findViewById(R.id.password);
+        final Button login_Button = findViewById(R.id.login);
+        final Button signUp_Text = findViewById(R.id.register);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -54,12 +54,12 @@ public class LoginActivity extends AppCompatActivity {
                 if (loginFormState == null) {
                     return;
                 }
-                loginButton.setEnabled(loginFormState.isDataValid());
+                login_Button.setEnabled(loginFormState.isDataValid());
                 if (loginFormState.getUsernameError() != null) {
-                    usernameEditText.setError(getString(loginFormState.getUsernameError()));
+                    username_EditText.setError(getString(loginFormState.getUsernameError()));
                 }
                 if (loginFormState.getPasswordError() != null) {
-                    passwordEditText.setError(getString(loginFormState.getPasswordError()));
+                    password_EditText.setError(getString(loginFormState.getPasswordError()));
                 }
             }
         });
@@ -78,24 +78,24 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                loginViewModel.loginDataChanged(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                loginViewModel.loginDataChanged(username_EditText.getText().toString(),
+                        password_EditText.getText().toString());
             }
         };
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.addTextChangedListener(afterTextChangedListener);
+        username_EditText.addTextChangedListener(afterTextChangedListener);
+        password_EditText.addTextChangedListener(afterTextChangedListener);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        login_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                signIn(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                signIn(username_EditText.getText().toString(),
+                        password_EditText.getText().toString());
 
             }
         });
 
-        signUpText.setOnClickListener(new View.OnClickListener() {
+        signUp_Text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
                 Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
