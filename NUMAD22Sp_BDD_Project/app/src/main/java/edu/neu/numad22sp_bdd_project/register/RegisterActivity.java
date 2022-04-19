@@ -39,11 +39,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private RegisterViewModel registerViewModel;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private EditText nameEditText;
-    private EditText usernameEditText;
-    private EditText passwordEditText;
-    private EditText DOBEditText;
-    private EditText countryEditText;
+    private EditText name_EditText;
+    private EditText username_EditText;
+    private EditText password_EditText;
+    private EditText dateOfBirth_EditText;
     private Spinner gender;
 
     @Override
@@ -63,35 +62,31 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         gender.setAdapter(adapter);
 
         // Get access to all user input components on UI
-        nameEditText = findViewById(R.id.name);
-        usernameEditText = findViewById(R.id.username);
-        passwordEditText = findViewById(R.id.password);
-        DOBEditText = findViewById(R.id.DOB);
-        countryEditText = findViewById(R.id.country);
+        name_EditText = findViewById(R.id.name);
+        username_EditText = findViewById(R.id.username);
+        password_EditText = findViewById(R.id.password);
+        dateOfBirth_EditText = findViewById(R.id.DOB);
         final Button registerButton = findViewById(R.id.register);
 
-        registerViewModel.getRegisterFormState().observe(this, new Observer<com.pacman.MentAlly.ui.register.RegisterFormState>() {
+        registerViewModel.getRegisterFormState().observe(this, new Observer<RegisterFormState>() {
             @Override
-            public void onChanged(@Nullable com.pacman.MentAlly.ui.register.RegisterFormState registerFormState) {
+            public void onChanged(@Nullable RegisterFormState registerFormState) {
                 if (registerFormState == null) {
                     return;
                 }
                 registerButton.setEnabled(registerFormState.isDataValid());
 
                 if (registerFormState.getNameError() != null) {
-                    nameEditText.setError(getString(registerFormState.getNameError()));
+                    name_EditText.setError(getString(registerFormState.getNameError()));
                 }
                 if (registerFormState.getUsernameError() != null) {
-                    usernameEditText.setError(getString(registerFormState.getUsernameError()));
+                    username_EditText.setError(getString(registerFormState.getUsernameError()));
                 }
                 if (registerFormState.getPasswordError() != null) {
-                    passwordEditText.setError(getString(registerFormState.getPasswordError()));
+                    password_EditText.setError(getString(registerFormState.getPasswordError()));
                 }
                 if (registerFormState.getDOBError() != null) {
-                    DOBEditText.setError(getString(registerFormState.getDOBError()));
-                }
-                if (registerFormState.getCountryError() != null) {
-                    countryEditText.setError(getString(registerFormState.getCountryError()));
+                    dateOfBirth_EditText.setError(getString(registerFormState.getDOBError()));
                 }
             }
         });
@@ -109,34 +104,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void afterTextChanged(Editable s) {
-                registerViewModel.registerDataChanged(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString(), nameEditText.getText().toString(),
-                        DOBEditText.getText().toString(), gender.getSelectedItem().toString(),
-                        countryEditText.getText().toString());
+                registerViewModel.registerDataChanged(username_EditText.getText().toString(),
+                        password_EditText.getText().toString(), name_EditText.getText().toString(),
+                        dateOfBirth_EditText.getText().toString(), gender.getSelectedItem().toString()
+                        );
             }
         };
 
         // Setup listeners for input field changes
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.addTextChangedListener(afterTextChangedListener);
-        DOBEditText.addTextChangedListener(afterTextChangedListener);
+        username_EditText.addTextChangedListener(afterTextChangedListener);
+        password_EditText.addTextChangedListener(afterTextChangedListener);
+        dateOfBirth_EditText.addTextChangedListener(afterTextChangedListener);
         registerButton.setOnClickListener(this);
 
         gender.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                registerViewModel.registerDataChanged(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString(), nameEditText.getText().toString(),
-                        DOBEditText.getText().toString(), gender.getSelectedItem().toString(),
-                        countryEditText.getText().toString());
+                registerViewModel.registerDataChanged(username_EditText.getText().toString(),
+                        password_EditText.getText().toString(), name_EditText.getText().toString(),
+                        dateOfBirth_EditText.getText().toString(), gender.getSelectedItem().toString());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                registerViewModel.registerDataChanged(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString(), nameEditText.getText().toString(),
-                        DOBEditText.getText().toString(), gender.getSelectedItem().toString(),
-                        countryEditText.getText().toString());
+                registerViewModel.registerDataChanged(username_EditText.getText().toString(),
+                        password_EditText.getText().toString(), name_EditText.getText().toString(),
+                        dateOfBirth_EditText.getText().toString(), gender.getSelectedItem().toString());
             }
 
         });
@@ -146,15 +139,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.register) {
-            createAccount(usernameEditText.getText().toString(), passwordEditText.getText().toString());
+            createAccount(username_EditText.getText().toString(), password_EditText.getText().toString());
         }
     }
 
-    public void addUserData(String UID, String name, String dob, String country, String gender) {
+    public void addUserData(String UID, String name, String dob, String gender) {
         Map<String,String> user = new HashMap<>();
         user.put("Name", name);
         user.put("DOB", dob);
-        user.put("Country", country);
         user.put("Gender", gender);
 
         db.collection("users").document(UID).set(user).addOnSuccessListener(this, new OnSuccessListener<Void>() {
@@ -177,8 +169,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     FirebaseUser user = mAuth.getCurrentUser();
-                    addUserData(user.getUid(), nameEditText.getText().toString(), DOBEditText.getText().toString(),
-                            countryEditText.getText().toString(), gender.getSelectedItem().toString());
+                    addUserData(user.getUid(), name_EditText.getText().toString(), dateOfBirth_EditText.getText().toString(),
+                            gender.getSelectedItem().toString());
                     updateUIWithUser(user);
                 } else {
                     updateUIWithUser(null);
@@ -190,7 +182,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private void updateUIWithUser(FirebaseUser user) {
         if (user == null) {
-            Toast.makeText(RegisterActivity.this,"Registration Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterActivity.this,"Registration Failed! The E-mail is already in use",
+                    Toast.LENGTH_SHORT).show();
             return;
         }
         String welcome = "Welcome " + user.getEmail() + "!";
