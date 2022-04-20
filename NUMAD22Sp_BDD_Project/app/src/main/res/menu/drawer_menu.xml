@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_home"
+            android:title="Home"/>
+
+        <item android:id="@+id/nav_todo"
+
+            android:title="ToDo"/>
+
+        <item android:id="@+id/nav_mood"
+            android:title="Mood Tracker"/>
+
+        <item android:id="@+id/nav_breathe"
+            android:title="Breathe"/>
+
+        <item android:id="@+id/nav_quiz"
+            android:title="Self-Assess"/>
+
+        <item android:id="@+id/nav_profile"
+            android:title="Profile"/>
+
+
+    </group>
+
+</menu>
