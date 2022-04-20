@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:241725979975:android:7c683c35300f34f5e3a062",
         "android_client_info": {
-          "package_name": "com.pacman.MentAlly"
+          "package_name": "edu.neu.numad22sp_bdd_project"
         }
       },
       "oauth_client": [
