@@ -11,19 +11,23 @@
             android:title="Home"/>
 
         <item android:id="@+id/nav_todo"
-
+            android:icon="@drawable/ic_todo"
             android:title="ToDo"/>
 
         <item android:id="@+id/nav_mood"
+            android:icon="@drawable/ic_moodtrack"
             android:title="Mood Tracker"/>
 
         <item android:id="@+id/nav_breathe"
+            android:icon="@drawable/ic_breath"
             android:title="Breathe"/>
 
         <item android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_assess"
             android:title="Self-Assess"/>
 
         <item android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_1"
             android:title="Profile"/>
 
 
