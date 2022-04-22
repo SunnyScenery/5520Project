@@ -51,7 +51,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/mood_background"/>
+        android:background="@drawable/mood_tracker_background"/>
     <Button
         android:id="@+id/addmood"
         android:layout_width="40sp"
