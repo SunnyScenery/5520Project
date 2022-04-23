@@ -13,17 +13,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Sp_BDD_Project">
         <activity
-            android:name=".moodtracker.AddMoodActivity"
-            android:exported="false" />
-        <activity
-            android:name=".moodtracker.MoodTrackerActivity"
+            android:name=".home.MainActivity"
             android:exported="false" />
         <activity
             android:name=".register.RegisterActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".home.HomeActivity"
             android:exported="false" />
+        <activity
+            android:name=".quiz.QuizActivity"
+           />
+        <activity
+            android:name=".adhd.adhdActivity"
+            />
+        <activity
+            android:name=".adhd.adhdResultActivity"
+            />
+        <!-- Anxiety Questionnaire -->
+        <activity android:name=".anxiety.anxietyActivity" />
+        <activity android:name=".anxiety.anxietyResultActivity" />
+
+        <activity android:name=".bipolar.bipolarActivity" />
+        <activity android:name=".bipolar.bipolarResultActivity" />
+
+        <activity android:name=".depression.depressionActivity" />
+        <activity android:name=".depression.depressionResultActivity" />
+
+        <activity android:name=".ocd.ocdActivity" />
+        <activity android:name=".ocd.ocdResultActivity" />
+
+        <!-- PTSD Questionnaire -->
+        <activity android:name=".ptsd.ptsd" />
+        <activity android:name=".ptsd.ptsdActivity" />
+        <activity android:name=".ptsd.ptsdResultActivity" />
+
+        <activity android:name=".moodtracker.AddMoodActivity" />
+        <activity android:name=".moodtracker.MoodTrackerActivity" />
+
         <activity
             android:name=".login.LoginActivity"
             android:exported="true">

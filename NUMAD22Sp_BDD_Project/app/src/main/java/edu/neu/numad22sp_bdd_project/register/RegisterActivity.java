@@ -190,6 +190,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent i = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(i);
+        finish();
     }
 
 }

@@ -37,6 +37,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (!isTaskRoot()) {
+            finish();
+            return;
+        }
         setContentView(R.layout.activity_login);
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory()).get(LoginViewModel.class);
 
@@ -136,6 +140,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Intent i = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(i);
+        finish();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
