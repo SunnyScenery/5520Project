@@ -11,41 +11,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="252dp"
-        android:paddingTop="20dp"
+        android:layout_height="192dp"
         android:background="#65A0CFE2"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="20dp">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:clickable="false"
-            app:srcCompat="@drawable/logo"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="To-Do List"
-            android:textAlignment="center"
-            android:textColor="#1A237E"
-            android:textSize="30sp" />
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="match_parent"
-            android:layout_marginHorizontal="30dp"
-            android:layout_height="50dp"
-            android:backgroundTint="#972196F3"
-            android:text="+"
-            android:textSize="25dp"/>
+            app:srcCompat="@drawable/logo" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="10dp"
-            android:gravity="center_horizontal"
             android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <Button
@@ -67,17 +50,27 @@
             </Button>
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To-Do List"
+            android:textAlignment="center"
+            android:textColor="#1A237E"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
 
     <ListView
         android:id="@+id/myList"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="382dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="-15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginBottom="40dp"></ListView>
+
     <Button
         android:id="@+id/delete_list_btn"
         android:layout_width="match_parent"
@@ -89,5 +82,14 @@
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:backgroundTint="#972196F3"
+        android:text="+"
+        android:textSize="25dp" />
 
 </LinearLayout>
