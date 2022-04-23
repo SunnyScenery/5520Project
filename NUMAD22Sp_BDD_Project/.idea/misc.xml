@@ -17,10 +17,35 @@
         <entry key="..\:/NEU/CS5520/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/navigation_header.xml" value="0.11197916666666667" />
         <entry key="..\:/NEU/CS5520/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/wallpaperlayout.xml" value="0.19427083333333334" />
         <entry key="..\:/NEU/CS5520/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/menu/drawer_menu.xml" value="0.536" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/quiz_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/quiz_button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rounded_button.xml" value="0.1" />
+        <entry key="app/src/main/res/font/antic.xml" value="0.1" />
+        <entry key="app/src/main/res/font/bangers.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_adhd.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_adhd_result.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_anxiety.xml" value="0.25831298828125" />
+        <entry key="app/src/main/res/layout/activity_anxiety_results.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_background.xml" value="0.15185185185185185" />
+        <entry key="app/src/main/res/layout/activity_bipolar.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_bipolar_result.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_depression.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_depression_result.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_ocd.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_ocd_result.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_ptsd_1.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_ptsd_2.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_ptsd_results_1.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_ptsd_results_2.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/navigation_header.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/wallpaperlayout.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -7,7 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import edu.neu.numad22sp_bdd_project.R;
-
+import edu.neu.numad22sp_bdd_project.quiz.QuizActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -56,6 +56,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent i_home = new Intent(this, HomeActivity.class);
                 startActivity(i_home);
                 finish();
+                draw.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.nav_quiz:
+                Intent i_quiz = new Intent(this, QuizActivity.class);
+                startActivity(i_quiz);
                 draw.closeDrawer(GravityCompat.START);
                 break;
         }
