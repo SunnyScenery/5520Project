@@ -54,7 +54,7 @@ public class AddMoodActivity extends AppCompatActivity {
     Button addmood;
 
 
-    int index = MoodTrackerActivity.getCurrentMood()+1;
+    int index = MoodTrackerActivity.getmoodid()+1;
     int boolselect = -1;
 
     String moodtype;

@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.moodtracker.MoodTrackerActivity;
+import edu.neu.numad22sp_bdd_project.moodtracker.TestActivity;
 import edu.neu.numad22sp_bdd_project.quiz.QuizActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -64,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(i_quiz);
                 draw.closeDrawer(GravityCompat.START);
                 break;
-
             case R.id.nav_mood:
                 Intent i_mood = new Intent(this, MoodTrackerActivity.class);
                 startActivity(i_mood);
