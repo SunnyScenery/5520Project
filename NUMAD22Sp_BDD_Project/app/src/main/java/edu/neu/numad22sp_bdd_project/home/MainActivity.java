@@ -8,7 +8,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.moodtracker.MoodTrackerActivity;
-import edu.neu.numad22sp_bdd_project.moodtracker.TestActivity;
 import edu.neu.numad22sp_bdd_project.quiz.QuizActivity;
 import android.content.Intent;
 import android.os.Bundle;

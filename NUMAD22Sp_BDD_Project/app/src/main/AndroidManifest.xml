@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Sp_BDD_Project">
         <activity
-            android:name=".moodtracker.TestActivity"
-            android:exported="false" />
-        <activity
             android:name=".home.MainActivity"
             android:exported="false" />
         <activity
