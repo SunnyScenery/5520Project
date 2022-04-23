@@ -23,6 +23,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.appcompat.widget.Toolbar;
+import edu.neu.numad22sp_bdd_project.todolist.TodolistActivity;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -63,6 +64,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 Intent i_home = new Intent(this, HomeActivity.class);
                 startActivity(i_home);
+                draw.closeDrawer(GravityCompat.START);
+                break;
+
+            case R.id.nav_todo:
+                Intent i_todo = new Intent(this, TodolistActivity.class);
+                startActivity(i_todo);
                 draw.closeDrawer(GravityCompat.START);
                 break;
         }

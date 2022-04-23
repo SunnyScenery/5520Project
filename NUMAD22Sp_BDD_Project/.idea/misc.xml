@@ -12,8 +12,12 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22871376811594202" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/activity_to_do_list.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/add_new_task_dialog.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/info_task_dialog.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/main_background.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/layout/navigation_header.xml" value="0.22871376811594202" />
+        <entry key="app/src/main/res/layout/task.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.35208333333333336" />
       </map>
     </option>
