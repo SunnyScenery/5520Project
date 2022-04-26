@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Sp_BDD_Project">
         <activity
+            android:name=".statistic.TestActivity"
+            android:exported="false" />
+        <activity
             android:name=".statistic.StatisticActivity"
             android:exported="false" />
         <activity

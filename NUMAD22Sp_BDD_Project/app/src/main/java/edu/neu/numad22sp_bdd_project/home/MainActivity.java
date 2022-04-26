@@ -10,6 +10,7 @@ import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.moodtracker.MoodTrackerActivity;
 import edu.neu.numad22sp_bdd_project.quiz.QuizActivity;
 import edu.neu.numad22sp_bdd_project.statistic.StatisticActivity;
+import edu.neu.numad22sp_bdd_project.statistic.TestActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 draw.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_stats:
-                Intent i_stats = new Intent(this, StatisticActivity.class);
+                Intent i_stats = new Intent(this, TestActivity.class);
                 startActivity(i_stats);
                 draw.closeDrawer(GravityCompat.START);
                 break;
