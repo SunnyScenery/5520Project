@@ -9,6 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.moodtracker.MoodTrackerActivity;
 import edu.neu.numad22sp_bdd_project.quiz.QuizActivity;
+import edu.neu.numad22sp_bdd_project.statistic.StatisticActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -67,6 +69,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_mood:
                 Intent i_mood = new Intent(this, MoodTrackerActivity.class);
                 startActivity(i_mood);
+                draw.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.nav_stats:
+                Intent i_stats = new Intent(this, StatisticActivity.class);
+                startActivity(i_stats);
                 draw.closeDrawer(GravityCompat.START);
                 break;
         }

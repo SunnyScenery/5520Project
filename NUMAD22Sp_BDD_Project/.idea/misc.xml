@@ -9,12 +9,18 @@
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/drawable/mood_tracker_background.xml" value="0.1315" />
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/drawable/textview_color.xml" value="0.1315" />
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_add_mood.xml" value="0.22" />
+        <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_bipolar.xml" value="0.159375" />
+        <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_bipolar_result.xml" value="0.159375" />
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_home.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_login.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_main.xml" value="0.159375" />
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_mood_item.xml" value="0.159375" />
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_mood_tracker.xml" value="0.22" />
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_quiz.xml" value="0.159375" />
+        <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_statistic.xml" value="0.1" />
         <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/activity_test.xml" value="0.1636271529888551" />
+        <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/navigation_header.xml" value="0.159375" />
+        <entry key="..\:/Users/18572/cs5520-final-2/5520Project/NUMAD22Sp_BDD_Project/app/src/main/res/layout/wallpaperlayout.xml" value="0.159375" />
         <entry key="app/src/main/res/drawable/ic_1.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.2215" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.198" />
