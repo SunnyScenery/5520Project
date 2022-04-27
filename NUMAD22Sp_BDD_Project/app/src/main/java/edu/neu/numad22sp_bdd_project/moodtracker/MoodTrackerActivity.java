@@ -7,7 +7,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -160,8 +159,8 @@ public class MoodTrackerActivity extends HomeActivity {
 
             if(mood.get(position) != null) {
 
-                if (mood.get(position).equalsIgnoreCase("sad")) {
-                    vmood.setImageResource(R.drawable.sad);
+                if (mood.get(position).equalsIgnoreCase("sleepy")) {
+                    vmood.setImageResource(R.drawable.sleepy);
                 }
                 if (mood.get(position).equalsIgnoreCase("cool")) {
                     vmood.setImageResource(R.drawable.cool);
@@ -169,17 +168,17 @@ public class MoodTrackerActivity extends HomeActivity {
                 if (mood.get(position).equalsIgnoreCase("afraid")) {
                     vmood.setImageResource(R.drawable.afraid);
                 }
-                if (mood.get(position).equalsIgnoreCase("cry")) {
-                    vmood.setImageResource(R.drawable.cry);
+                if (mood.get(position).equalsIgnoreCase("sad")) {
+                    vmood.setImageResource(R.drawable.sad);
                 }
                 if (mood.get(position).equalsIgnoreCase("happy")) {
                     vmood.setImageResource(R.drawable.happy);
                 }
-                if (mood.get(position).equalsIgnoreCase("kiss")) {
-                    vmood.setImageResource(R.drawable.kiss);
+                if (mood.get(position).equalsIgnoreCase("angry")) {
+                    vmood.setImageResource(R.drawable.angry);
                 }
-                if (mood.get(position).equalsIgnoreCase("silence")) {
-                    vmood.setImageResource(R.drawable.silence);
+                if (mood.get(position).equalsIgnoreCase("normal")) {
+                    vmood.setImageResource(R.drawable.normal);
                 }
                 if (mood.get(position).equalsIgnoreCase("sweat")) {
                     vmood.setImageResource(R.drawable.sweat);
@@ -187,8 +186,8 @@ public class MoodTrackerActivity extends HomeActivity {
                 if (mood.get(position).equalsIgnoreCase("worry")) {
                     vmood.setImageResource(R.drawable.worry);
                 }
-                if (mood.get(position).equalsIgnoreCase("yummy")) {
-                    vmood.setImageResource(R.drawable.yummy);
+                if (mood.get(position).equalsIgnoreCase("sick")) {
+                    vmood.setImageResource(R.drawable.sick);
                 }
             }
 

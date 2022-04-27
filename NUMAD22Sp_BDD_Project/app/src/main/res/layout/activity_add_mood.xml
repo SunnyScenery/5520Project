@@ -113,7 +113,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="60dp"
-                        android:src="@drawable/date"/>
+                        android:src="@drawable/calendar"/>
 
                     <LinearLayout
                         android:layout_width="201dp"
@@ -170,36 +170,40 @@
 
                     <Button
                         android:id="@+id/happy"
-                        android:layout_width="40dp"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:background="@drawable/happy"/>
 
                     <Button
                         android:id="@+id/cool"
-                        android:layout_width="40dp"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
                         android:background="@drawable/cool"
                         android:layout_weight="1" />
 
                     <Button
-                        android:id="@+id/sad"
-                        android:layout_width="40dp"
+                        android:id="@+id/sleepy"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/sad"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/sleepy"
                         android:layout_weight="1" />
 
                     <Button
                         android:id="@+id/sweat"
-                        android:layout_width="40dp"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
                         android:background="@drawable/sweat"
                         android:layout_weight="1" />
 
                     <Button
                         android:id="@+id/afraid"
-                        android:layout_width="40dp"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
                         android:background="@drawable/afraid"
                         android:layout_weight="1"/>
 
@@ -224,35 +228,39 @@
                     android:padding="0dp">
 
                     <Button
-                        android:id="@+id/yummy"
-                        android:layout_width="40dp"
+                        android:id="@+id/sick"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/yummy"/>
+                        android:background="@drawable/sick"/>
 
                     <Button
-                        android:id="@+id/kiss"
-                        android:layout_width="40dp"
+                        android:id="@+id/angry"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/kiss"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/angry"
                         android:layout_weight="1" />
                     <Button
-                        android:id="@+id/silence"
-                        android:layout_width="40dp"
+                        android:id="@+id/normal"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/silence"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/normal"
                         android:layout_weight="1" />
                     <Button
                         android:id="@+id/worry"
-                        android:layout_width="40dp"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
                         android:background="@drawable/worry"
                         android:layout_weight="1"/>
                     <Button
-                        android:id="@+id/cry"
-                        android:layout_width="40dp"
+                        android:id="@+id/sad"
+                        android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/cry"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/sad"
                         android:layout_weight="1"/>
                 </LinearLayout>
 

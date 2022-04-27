@@ -42,15 +42,15 @@ public class AddMoodActivity extends AppCompatActivity {
     ImageView calendar;
 
     Button happy;
-    Button sad;
+    Button sleepy;
     Button cool;
     Button afraid;
-    Button cry;
-    Button kiss;
-    Button silence;
+    Button sad;
+    Button angry;
+    Button normal;
     Button sweat;
     Button worry;
-    Button yummy;
+    Button sick;
     Button addmood;
 
 
@@ -80,15 +80,15 @@ public class AddMoodActivity extends AppCompatActivity {
         descbox = findViewById(R.id.descbox);
 
         happy = findViewById(R.id.happy);
-        sad = findViewById(R.id.sad);
+        sleepy = findViewById(R.id.sleepy);
         cool = findViewById(R.id.cool);
         afraid = findViewById(R.id.afraid);
-        cry = findViewById(R.id.cry);
-        kiss = findViewById(R.id.kiss);
-        silence = findViewById(R.id.silence);
+        sad = findViewById(R.id.sad);
+        angry = findViewById(R.id.angry);
+        normal = findViewById(R.id.normal);
         sweat = findViewById(R.id.sweat);
         worry = findViewById(R.id.worry);
-        yummy = findViewById(R.id.yummy);
+        sick = findViewById(R.id.sick);
 
         addmood = findViewById(R.id.addmood);
 
@@ -136,12 +136,12 @@ public class AddMoodActivity extends AppCompatActivity {
 
             }
         });
-        sad.setOnClickListener(new View.OnClickListener(){
+        sleepy.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                moodtype = "sad";
-                Toast.makeText(AddMoodActivity.this, "I feel sad", Toast.LENGTH_SHORT).show();
+                moodtype = "sleepy";
+                Toast.makeText(AddMoodActivity.this, "I feel sleepy", Toast.LENGTH_SHORT).show();
                 if(boolselect == 1){
                     addmood.setEnabled(true);
 
@@ -163,7 +163,7 @@ public class AddMoodActivity extends AppCompatActivity {
                 }
             }
         });
-        yummy.setOnClickListener(new View.OnClickListener(){
+        sick.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -176,12 +176,12 @@ public class AddMoodActivity extends AppCompatActivity {
             }
         });
 
-        cry.setOnClickListener(new View.OnClickListener(){
+        sad.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                moodtype = "cry";
-                Toast.makeText(AddMoodActivity.this, "I feel that I want to cry", Toast.LENGTH_SHORT).show();
+                moodtype = "sad";
+                Toast.makeText(AddMoodActivity.this, "I feel sad", Toast.LENGTH_SHORT).show();
                 if(boolselect == 1){
                     addmood.setEnabled(true);
 
@@ -215,24 +215,24 @@ public class AddMoodActivity extends AppCompatActivity {
             }
         });
 
-        silence.setOnClickListener(new View.OnClickListener(){
+        normal.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                moodtype = "silence";
-                Toast.makeText(AddMoodActivity.this, "I feel I don't want to talk too much", Toast.LENGTH_SHORT).show();
+                moodtype = "normal";
+                Toast.makeText(AddMoodActivity.this, "I feel as normal", Toast.LENGTH_SHORT).show();
                 if(boolselect == 1){
                     addmood.setEnabled(true);
 
                 }
             }
         });
-        kiss.setOnClickListener(new View.OnClickListener(){
+        angry.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                moodtype = "kiss";
-                Toast.makeText(AddMoodActivity.this, "I feel I am loved", Toast.LENGTH_SHORT).show();
+                moodtype = "angry";
+                Toast.makeText(AddMoodActivity.this, "I feel angry", Toast.LENGTH_SHORT).show();
                 if(boolselect == 1){
                     addmood.setEnabled(true);
 
