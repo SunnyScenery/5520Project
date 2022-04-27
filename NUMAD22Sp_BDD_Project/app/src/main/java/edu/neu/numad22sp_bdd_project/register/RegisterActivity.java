@@ -51,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
         registerViewModel = new ViewModelProvider(this, new RegisterViewModelFactory()).get(RegisterViewModel.class);
 
+
         //initialize cloud firestore database and authentication
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();

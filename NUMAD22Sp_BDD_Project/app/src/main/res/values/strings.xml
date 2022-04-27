@@ -16,5 +16,11 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!--Breath-->
+    <string name="breathing_exercise">Breathing exercise</string>
+    <string name="start">Start</string>
+
 </resources>
 
