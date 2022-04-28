@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_quiz:
                 Intent i_quiz = new Intent(this, QuizActivity.class);
                 startActivity(i_quiz);
+                finish();
                 draw.closeDrawer(GravityCompat.START);
                 break;
         }
