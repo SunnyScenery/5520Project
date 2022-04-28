@@ -33,7 +33,7 @@ public class ColumnBarChartView extends View {
     /**
      * 设置柱状间距
      */
-    private int mMargin=20;
+    private int mMargin=30;
     /**
      * 设置是否显示数据（柱状名字-数值）
      */
@@ -73,13 +73,20 @@ public class ColumnBarChartView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        mWidth  = ( getWidth() - (mMargin*(getSize()-1)) ) / getSize(); //计算每个柱状宽度
-        mHeight = ( getHeight() / getNumber() ); //计算柱状数值的平均高度值
+        mWidth = 75;
+        mHeight = ( getHeight() / getNumber() ) + 80; //计算柱状数值的平均高度值
+
+
         for(int i=0;i<mArray.size();i++){
             mRectF.left= i*(mWidth+mMargin);
             mRectF.right= mRectF.left+mWidth;
             mRectF.bottom=getHeight();
-            mRectF.top= mRectF.bottom-mHeight*mArray.get(i).mNumber ; //柱状高度=数值的平均高度值*柱状数值
+            if(mArray.get(i).mNumber == 0) {
+                mRectF.top = 0;
+            } else {
+                mRectF.top= mRectF.bottom-mHeight*mArray.get(i).mNumber ; //柱状高度=数值的平均高度值*柱状数值
+            }
+
             if(mDisplayData){ //如果设置了展示名字，则绘制名字
                 onDrawName(canvas,i); //画柱状名字
                 onDrawNumber(canvas,i); //画柱状数值
@@ -103,20 +110,40 @@ public class ColumnBarChartView extends View {
     //绘制-柱状数值
     private void onDrawNumber(Canvas canvas,int i){
         mPaint.setTextSize(dip2px(mContext, (float) Math.sqrt(mWidth)));
-        mPaint.getTextBounds(String.valueOf(mArray.get(i).mNumber), 0, String.valueOf(mArray.get(i).mNumber).length(), mTextRect); //计算文字位置,处于柱状宽度中间
+        if(mArray.get(i).mNumber == 0) {
+            mPaint.getTextBounds("0.0", 0, "0.0".length(), mTextRect);
+        } else {
+            mPaint.getTextBounds(String.valueOf(mArray.get(i).mNumber), 0, String.valueOf(mArray.get(i).mNumber).length(), mTextRect); //计算文字位置,处于柱状宽度中间
+        }
+
         mPaint.setColor(mTextColor);
-        canvas.drawText(   //柱状名字
-                String.valueOf(mArray.get(i).mNumber),
-                (mRectF.left+mRectF.right)/2 - (mTextRect.left+mTextRect.right)/2,
-                mRectF.top,
-                mPaint);
+        if(mArray.get(i).mNumber == 0) {
+
+            canvas.drawText(   //柱状名字
+                    "0.0",
+                    (mRectF.left+mRectF.right)/2 - (mTextRect.left+mTextRect.right)/2,
+                    mRectF.bottom - 40,
+                    mPaint);
+        } else {
+            canvas.drawText(   //柱状名字
+                    String.valueOf(mArray.get(i).mNumber),
+                    (mRectF.left+mRectF.right)/2 - (mTextRect.left+mTextRect.right)/2,
+                    mRectF.top,
+                    mPaint);
+        }
+
 
     }
     //绘制-柱状图形
     private void onDrawColumn(Canvas canvas,int i){
         if(mDisplayData) { //如果设置了展示名字，则绘制柱状图形的位置要在文字之上
             mRectF.bottom=mRectF.bottom-dip2px(mContext,(mTextRect.bottom-mTextRect.top)); //柱状底部位置=组件底部-文字高度
-            mRectF.top= mRectF.bottom-mHeight*mArray.get(i).mNumber +dip2px(mContext,(mTextRect.bottom-mTextRect.top+2)) ; //柱状高度=数值的平均高度值*柱状数值
+            if(mArray.get(i).mNumber == 0) {
+                mRectF.top = mRectF.bottom;
+            } else {
+                mRectF.top= mRectF.bottom-mHeight*mArray.get(i).mNumber +dip2px(mContext,(mTextRect.bottom-mTextRect.top+2)) ; //柱状高度=数值的平均高度值*柱状数值
+            }
+
         }
         Drawable drawable;
         try{

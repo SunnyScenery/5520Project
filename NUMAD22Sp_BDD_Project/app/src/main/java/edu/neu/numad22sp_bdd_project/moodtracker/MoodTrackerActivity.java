@@ -181,10 +181,10 @@ public class MoodTrackerActivity extends HomeActivity {
                     vmood.setImageResource(R.drawable.normal);
                 }
                 if (mood.get(position).equalsIgnoreCase("sweat")) {
-                    vmood.setImageResource(R.drawable.sweat);
+                    vmood.setImageResource(R.drawable.sweat2);
                 }
                 if (mood.get(position).equalsIgnoreCase("worry")) {
-                    vmood.setImageResource(R.drawable.worry);
+                    vmood.setImageResource(R.drawable.tired);
                 }
                 if (mood.get(position).equalsIgnoreCase("sick")) {
                     vmood.setImageResource(R.drawable.sick);

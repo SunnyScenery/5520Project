@@ -57,7 +57,7 @@
         android:layout_width="40sp"
         android:layout_height="40sp"
         android:layout_gravity="center"
-        android:background="@drawable/plus"
+        android:background="@drawable/add"
 
         android:textSize="18sp"
         android:layout_marginTop="-40dp"
