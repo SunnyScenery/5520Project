@@ -15,29 +15,33 @@
 
     <TextView
         android:id="@+id/sensor_textview1"
-        android:layout_width="match_parent"
+        android:layout_width="341dp"
+        android:layout_marginTop="20dp"
         android:layout_height="44dp"
+        android:layout_marginStart="36dp"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/sensor_textView2"
-        android:layout_width="match_parent"
+        android:layout_width="341dp"
         android:layout_height="97dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="36dp"
         android:text="TextView" />
 
-    <Button
-        android:id="@+id/sensor_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="#C0B2E7"
-        android:textAllCaps="false"
-        android:textColor="#664564"
-        android:textColorHighlight="#664564"
-        android:textColorHint="#664564"
-        android:textColorLink="#664564"
-        android:textSize="18sp"
-        android:text="detect environment pressure" />
+<!--    <Button-->
+<!--        android:id="@+id/sensor_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:background="@drawable/rounded_button"-->
+<!--        android:backgroundTint="#C0B2E7"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#664564"-->
+<!--        android:textColorHighlight="#664564"-->
+<!--        android:textColorHint="#664564"-->
+<!--        android:textColorLink="#664564"-->
+<!--        android:textSize="18sp"-->
+<!--        android:text="detect environment pressure" />-->
 </LinearLayout>

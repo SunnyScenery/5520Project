@@ -48,6 +48,9 @@
         <activity android:name=".ptsd.ptsdActivity" />
         <activity android:name=".ptsd.ptsdResultActivity" />
 
+        <activity android:name=".sensor.SensorActivity" />
+
+
         <activity
             android:name=".login.LoginActivity"
             android:exported="true">
