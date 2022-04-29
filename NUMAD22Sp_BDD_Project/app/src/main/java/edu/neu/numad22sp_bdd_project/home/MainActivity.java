@@ -8,6 +8,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.quiz.QuizActivity;
+import edu.neu.numad22sp_bdd_project.breath.BreathActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -79,6 +81,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 draw.closeDrawer(GravityCompat.START);
                 break;
 
+            case R.id.nav_breathe:
+                Intent i_breath = new Intent(this, BreathActivity.class);
+                startActivity(i_breath);
+                finish();
+                draw.closeDrawer(GravityCompat.START);
+                break;
         }
 
         return true;
