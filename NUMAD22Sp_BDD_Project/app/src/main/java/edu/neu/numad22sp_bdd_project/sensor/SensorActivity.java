@@ -6,12 +6,14 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import edu.neu.numad22sp_bdd_project.R;
+import edu.neu.numad22sp_bdd_project.home.HomeActivity;
 
-public class SensorActivity extends AppCompatActivity {
+public class SensorActivity extends HomeActivity {
 
     private TextView pressureText;
     private TextView reactionText;
@@ -40,10 +42,15 @@ public class SensorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensor);
+        FrameLayout contentFrameLayout = findViewById(R.id.frag_container);
+        getLayoutInflater().inflate(R.layout.activity_sensor, contentFrameLayout);
+
+//        setContentView(R.layout.activity_sensor);
         pressureText = findViewById(R.id.sensor_textview1);
         reactionText = findViewById(R.id.sensor_textView2);
 //        button = findViewById(R.id.sensor_button);
+
+
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
