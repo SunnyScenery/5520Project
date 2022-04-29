@@ -15,6 +15,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.appcompat.widget.Toolbar;
+import edu.neu.numad22sp_bdd_project.sensor.SensorActivity;
+import edu.neu.numad22sp_bdd_project.todolist.TodolistActivity;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -61,8 +63,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_quiz:
                 Intent i_quiz = new Intent(this, QuizActivity.class);
                 startActivity(i_quiz);
+                finish();
                 draw.closeDrawer(GravityCompat.START);
                 break;
+            case R.id.nav_sensor:
+                Intent i_sensor = new Intent(this, SensorActivity.class);
+                startActivity(i_sensor);
+                finish();
+                draw.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.nav_todo:
+                Intent i_todo = new Intent(this, TodolistActivity.class);
+                startActivity(i_todo);
+                finish();
+                draw.closeDrawer(GravityCompat.START);
+                break;
+
         }
 
         return true;
