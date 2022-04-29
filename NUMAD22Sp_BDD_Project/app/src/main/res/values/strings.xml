@@ -133,7 +133,8 @@
     <!--Breath-->
     <string name="breathing_exercise">Breathing exercise</string>
     <string name="start">Start</string>
+    <string name="SelfAssessment">Self-Assessment Quiz</string>
 
->>>>>>> breath
+    >>>>>>> breath
 </resources>
 
