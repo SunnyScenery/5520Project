@@ -16,9 +16,6 @@
             android:name=".statistic.TestActivity"
             android:exported="false" />
         <activity
-            android:name=".statistic.StatisticActivity"
-            android:exported="false" />
-        <activity
             android:name=".breath.BreathExerciseActivity"
             android:exported="false" />
         <activity
