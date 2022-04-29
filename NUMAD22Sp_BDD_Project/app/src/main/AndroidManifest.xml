@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Sp_BDD_Project">
         <activity
+            android:name=".statistic.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".statistic.StatisticActivity"
+            android:exported="false" />
+        <activity
             android:name=".breath.BreathExerciseActivity"
             android:exported="false" />
         <activity
@@ -56,7 +62,8 @@
 
         <activity android:name=".sensor.SensorActivity" />
 
-
+        <activity android:name=".moodtracker.AddMoodActivity" />
+        <activity android:name=".moodtracker.MoodTrackerActivity" />
         <activity
             android:name=".login.LoginActivity"
             android:exported="true">
