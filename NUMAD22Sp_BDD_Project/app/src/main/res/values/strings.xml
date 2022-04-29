@@ -18,6 +18,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
+<<<<<<< HEAD
+
+
     <!--quiz ADHD-->
     <string name="adhd">Test for ADHD</string>
     <string name="adhdOvr">Over the past 6 months...</string>
@@ -128,5 +131,11 @@
     <string name="a_serious_accident_or_fires">•a serious accident or fire</string>
     <string name="a_serious_accident_or_fire">a serious accident or fire</string>
     <string name="sometimes_things_happen_to_people_that_are_unusually_or_especially_frightening_horrible_or_traumatic_for_example">Sometimes things happen to people that are unusually or especially frightening, horrible, or traumatic. For example:</string>
+=======
+    <!--Breath-->
+    <string name="breathing_exercise">Breathing exercise</string>
+    <string name="start">Start</string>
+
+>>>>>>> breath
 </resources>
 
