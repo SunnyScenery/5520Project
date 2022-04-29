@@ -11,8 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
-public class ocdActivity extends HomeActivity {
+public class ocdActivity extends MainActivity {
 
     private ocdQuestionModel mQues = new ocdQuestionModel();
     private TextView mQuesView;

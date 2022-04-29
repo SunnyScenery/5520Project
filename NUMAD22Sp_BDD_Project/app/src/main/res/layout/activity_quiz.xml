@@ -9,32 +9,42 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:background="#75FEF9B4"
+        android:layout_height="160dp"
+        android:background="#CBDDC3"
         android:orientation="vertical"
         android:paddingTop="30dp">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="10dp"
             android:clickable="false"
             app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/SelfAssessment"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/quiz_layout"
-        android:layout_width="398dp"
-        android:layout_height="653dp"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/breath_layout"
+        android:layout_width="380dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="0dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/quiz_background"
-        android:orientation="vertical">
+        android:background="#EEF3ED">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -52,15 +62,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/arima_madurai_extrabold"
-                    android:text="Self-Assessment Quiz"
-                    android:textAlignment="center"
-                    android:textColor="#1A237E"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/button_adhd"
@@ -69,6 +70,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:backgroundTint="#F9C984"
                     android:background="@drawable/quiz_button"
                     android:onClick="adhd_test"
                     android:text="@string/adhd"
@@ -86,6 +88,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:backgroundTint="#F9C984"
                     android:background="@drawable/quiz_button"
                     android:onClick="anxiety_test"
                     android:text="@string/anxiety"
@@ -104,6 +107,7 @@
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="10dp"
                                     android:text="@string/bipolar"
+                                     android:backgroundTint="#F9C984"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -119,6 +123,7 @@
                                     android:layout_marginTop="20dp"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="10dp"
+                                    android:backgroundTint="#F9C984"
                                     android:text="@string/depression"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -135,6 +140,7 @@
                                     android:layout_marginTop="20dp"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="10dp"
+                                    android:backgroundTint="#F9C984"
                                     android:text="@string/ocd"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -151,6 +157,7 @@
                                     android:layout_marginTop="20dp"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="10dp"
+                                    android:backgroundTint="#F9C984"
                                     android:text="@string/ptsd"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"

@@ -11,8 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
-public class bipolarActivity extends HomeActivity {
+public class bipolarActivity extends MainActivity {
 
     private bipolarQuestionModel mQues = new bipolarQuestionModel();
     private TextView mQuesView;

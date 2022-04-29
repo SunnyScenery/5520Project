@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/activity_phq9"
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
+        android:layout_height="180dp"
+        android:background="#CBDDC3"
         android:orientation="vertical"
-        tools:context=".adhd.adhdActivity"
-        android:background="@drawable/quiz_background">
+        android:paddingTop="30dp">
 
 
         <TextView
@@ -29,11 +25,8 @@
             android:layout_marginTop="20dp"
             android:text="@string/adhdOvr"
             android:textAllCaps="false"
-            android:textColor="#009688"
-            android:textColorHighlight="#3F51B5"
-            android:textColorHint="#3F51B5"
-            android:textColorLink="#3F51B5"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/questions"
@@ -45,11 +38,9 @@
             android:autoSizeTextType="uniform"
             android:text="@string/adhdQ1"
             android:textAllCaps="false"
-            android:textColor="#009688"
-            android:textColorHighlight="#3F51B5"
-            android:textColorHint="#3F51B5"
-            android:textColorLink="#3F51B5"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
         <Button
             android:id="@+id/choiceA"
@@ -59,13 +50,13 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="#F9C984"
             android:text="@string/adhdA1"
             android:textAllCaps="false"
-            android:textColor="#664564"
-            android:textColorHighlight="#664564"
-            android:textColorHint="#664564"
-            android:textColorLink="#664564"
+            android:textColor="#3F51B5"
+            android:textColorHighlight="#3F51B5"
+            android:textColorHint="#3F51B5"
+            android:textColorLink="#3F51B5"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/questions" />
 
@@ -77,13 +68,13 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="#F9C984"
             android:text="@string/adhdA2"
             android:textAllCaps="false"
-            android:textColor="#664564"
-            android:textColorHighlight="#664564"
-            android:textColorHint="#664564"
-            android:textColorLink="#664564"
+            android:textColor="#3F51B5"
+            android:textColorHighlight="#3F51B5"
+            android:textColorHint="#3F51B5"
+            android:textColorLink="#3F51B5"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/choiceA" />
 
@@ -95,13 +86,13 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="#F9C984"
             android:text="@string/adhdA3"
             android:textAllCaps="false"
-            android:textColor="#664564"
-            android:textColorHighlight="#664564"
-            android:textColorHint="#664564"
-            android:textColorLink="#664564"
+            android:textColor="#3F51B5"
+            android:textColorHighlight="#3F51B5"
+            android:textColorHint="#3F51B5"
+            android:textColorLink="#3F51B5"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/choiceB" />
 
@@ -113,13 +104,13 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="#F9C984"
             android:text="@string/adhdA4"
             android:textAllCaps="false"
-            android:textColor="#664564"
-            android:textColorHighlight="#664564"
-            android:textColorHint="#664564"
-            android:textColorLink="#664564"
+            android:textColor="#3F51B5"
+            android:textColorHighlight="#3F51B5"
+            android:textColorHint="#3F51B5"
+            android:textColorLink="#3F51B5"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/choiceC" />
 
@@ -131,15 +122,15 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="#F9C984"
             android:text="@string/adhdA5"
             android:textAllCaps="false"
-            android:textColor="#664564"
-            android:textColorHighlight="#664564"
-            android:textColorHint="#664564"
-            android:textColorLink="#664564"
+            android:textColor="#3F51B5"
+            android:textColorHighlight="#3F51B5"
+            android:textColorHint="#3F51B5"
+            android:textColorLink="#3F51B5"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/choiceD" />
 
-    </LinearLayout>
-</ScrollView>
+
+</LinearLayout>

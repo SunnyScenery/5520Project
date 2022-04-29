@@ -10,8 +10,9 @@ import android.widget.TextView;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
-public class adhdActivity extends HomeActivity {
+public class adhdActivity extends MainActivity {
 
     private adhdQuestionModel mQues = new adhdQuestionModel();
     private TextView mQuesView;
