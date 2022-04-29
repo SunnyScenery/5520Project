@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="252dp"
-            android:background="#729378C7"
+            android:background="#CBDDC3"
             android:orientation="vertical">
 
 
@@ -35,7 +35,7 @@
                 android:fontFamily="@font/"
                 android:textStyle="bold"
                 android:paddingVertical="20sp"
-                android:text="Log New Mood"
+                android:text="Add New Mood"
                 android:textAlignment="center"
                 android:textColor="#1A237E"
                 android:textSize="25sp" />
@@ -55,23 +55,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp">
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/on"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="The date you want to record is"
-                    android:textAlignment="center"
-                    android:textSize="15dp"
-                    android:textColor="#050505"/>
 
 
             </LinearLayout>
@@ -163,7 +146,7 @@
                         android:id="@+id/cool"
                         android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/cool"
                         android:layout_weight="1" />
 
@@ -171,7 +154,7 @@
                         android:id="@+id/sleepy"
                         android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/sleepy"
                         android:layout_weight="1" />
 
@@ -179,7 +162,7 @@
                         android:id="@+id/sweat"
                         android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/sweat2"
                         android:layout_weight="1" />
 
@@ -187,7 +170,7 @@
                         android:id="@+id/afraid"
                         android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/afraid"
                         android:layout_weight="1"/>
 
@@ -222,28 +205,28 @@
                         android:id="@+id/angry"
                         android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/angry"
                         android:layout_weight="1" />
                     <Button
                         android:id="@+id/normal"
                         android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/normal"
                         android:layout_weight="1" />
                     <Button
                         android:id="@+id/worry"
                         android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/tired"
                         android:layout_weight="1"/>
                     <Button
                         android:id="@+id/sad"
                         android:layout_width="25dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/sad"
                         android:layout_weight="1"/>
                 </LinearLayout>
@@ -285,35 +268,35 @@
                     android:id="@+id/read"
                     android:layout_width="25dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/reading"
                     android:layout_weight="1" />
                 <Button
                     android:id="@+id/travel"
                     android:layout_width="25dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/travel"
                     android:layout_weight="1" />
                 <Button
                     android:id="@+id/work"
                     android:layout_width="25dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/work"
                     android:layout_weight="1"/>
                 <Button
                     android:id="@+id/family"
                     android:layout_width="25dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/family"
                     android:layout_weight="1"/>
                 <Button
                     android:id="@+id/food"
                     android:layout_width="25dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/food"
                     android:layout_weight="1"/>
             </LinearLayout>
@@ -360,6 +343,7 @@
                     android:textSize="20sp"
                     android:enabled="false"
                     android:textColor="#050505"
+                    android:background="@drawable/add_button"
                     android:layout_gravity="bottom"
                     tools:ignore="RtlCompat" />
             </LinearLayout>

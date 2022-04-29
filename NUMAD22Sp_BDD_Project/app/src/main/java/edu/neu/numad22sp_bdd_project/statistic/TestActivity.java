@@ -3,9 +3,14 @@ package edu.neu.numad22sp_bdd_project.statistic;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,8 +33,9 @@ import java.util.Objects;
 import java.util.Random;
 
 import edu.neu.numad22sp_bdd_project.R;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends MainActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static ArrayList<Type> mArrayList = new ArrayList<>();
     private String user;
@@ -40,14 +46,18 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        //setContentView(R.layout.activity_test);
+        FrameLayout contentFrameLayout = findViewById(R.id.frag_container);
+        getLayoutInflater().inflate(R.layout.activity_test, contentFrameLayout);
+        mColumnBarChartView = findViewById(R.id.columnBarChartView);
+        mPie = findViewById(R.id.pieChartView);
         user = FirebaseAuth.getInstance().getUid();
-        int[] count = getListItems();
+        getListItems();
         Log.d("TAG", "onCreate: LIST IN ONCREATE = " + mArrayList);
         //drawBarChart(count);
     }
 
-    private int[] getListItems() {
+    private void getListItems() {
         int[] count = new int[10];
         int[] act = new int[5];
         db.collection("users").document(user).collection("moodlog").get()
@@ -115,7 +125,8 @@ public class TestActivity extends AppCompatActivity {
 
                             }
                             mColumnBarChartView = findViewById(R.id.columnBarChartView);
-                            mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("happy", count[0], Color.parseColor("#111111")));
+                            mPie = findViewById(R.id.pieChartView);
+                            mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("happy", count[0], getRandColorCode()));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sleepy", count[1], getRandColorCode()));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("cool", count[2], getRandColorCode()));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("afraid", count[3], getRandColorCode()));
@@ -126,7 +137,7 @@ public class TestActivity extends AppCompatActivity {
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("worry", count[8], getRandColorCode()));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sick", count[9], getRandColorCode()));
 
-                            mPie = findViewById(R.id.pieChartView);
+
                             mPie.setRadius(DensityUtils.dp2px(TestActivity.this, 80));
                             List<Pie.PieEntry> pieEntries = new ArrayList<>();
                             for(int i = 0; i < 5; i ++) {
@@ -140,7 +151,6 @@ public class TestActivity extends AppCompatActivity {
                         }
                     }
     });
-        return count;
     }
 
 
