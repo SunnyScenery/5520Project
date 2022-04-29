@@ -34,6 +34,8 @@ public class TestActivity extends AppCompatActivity {
     private static ArrayList<Type> mArrayList = new ArrayList<>();
     private String user;
     private ColumnBarChartView mColumnBarChartView;
+    private Pie mPie;
+    private static final String[] actName = {"read", "work", "travel", "family", "food"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +43,13 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
         user = FirebaseAuth.getInstance().getUid();
         int[] count = getListItems();
-        System.out.println(count[8] + " " + count[4]);
         Log.d("TAG", "onCreate: LIST IN ONCREATE = " + mArrayList);
         //drawBarChart(count);
     }
 
     private int[] getListItems() {
         int[] count = new int[10];
+        int[] act = new int[5];
         db.collection("users").document(user).collection("moodlog").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
 
@@ -92,9 +94,28 @@ public class TestActivity extends AppCompatActivity {
                                 if (result.equals("sick")) {
                                     count[9]++;
                                 }
+                                String acttype = snapshot.getString("acttype");
+                                if(acttype != null) {
+                                    if(acttype.equals("read")) {
+                                        act[0] ++;
+                                    }
+                                    if(acttype.equals("work")) {
+                                        act[1] ++;
+                                    }
+                                    if(acttype.equals("travel")) {
+                                        act[2] ++;
+                                    }
+                                    if(acttype.equals("family")) {
+                                        act[3] ++;
+                                    }
+                                    if(acttype.equals("food")) {
+                                        act[4] ++;
+                                    }
+                                }
+
                             }
                             mColumnBarChartView = findViewById(R.id.columnBarChartView);
-                            mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("happy", count[0], Color.RED));
+                            mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("happy", count[0], Color.parseColor("#111111")));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sleepy", count[1], getRandColorCode()));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("cool", count[2], getRandColorCode()));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("afraid", count[3], getRandColorCode()));
@@ -104,6 +125,16 @@ public class TestActivity extends AppCompatActivity {
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sweat", count[7], getRandColorCode()));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("worry", count[8], getRandColorCode()));
                             mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sick", count[9], getRandColorCode()));
+
+                            mPie = findViewById(R.id.pieChartView);
+                            mPie.setRadius(DensityUtils.dp2px(TestActivity.this, 80));
+                            List<Pie.PieEntry> pieEntries = new ArrayList<>();
+                            for(int i = 0; i < 5; i ++) {
+                                if(act[i] != 0) {
+                                    pieEntries.add(new Pie.PieEntry(actName[i], act[i], getRandColorCode()));
+                                }
+                            }
+                            mPie.setPieEntries(pieEntries);
                             // Add all to your list
                             Log.d("TAG", "onSuccess: " + mArrayList);
                         }
@@ -112,21 +143,6 @@ public class TestActivity extends AppCompatActivity {
         return count;
     }
 
-    private void drawBarChart(int[] count) {
-        mColumnBarChartView = findViewById(R.id.columnBarChartView);
-        //int result = count[0];
-        //t.setText(result);
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("happy", count[0], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sleepy", count[1], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("cool", count[2], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("afraid", count[3], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sad", count[4], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("angry", count[5], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("normal", count[6], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sweat", count[7], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("worry", count[8], getRandColorCode()));
-        mColumnBarChartView.addColumnData(new ColumnBarChartView.ColumnDataFrom("sick", count[9], getRandColorCode()));
-    }
 
     private static int getRandColorCode() {
         String r, g, b;

@@ -37,6 +37,7 @@ public class AddMoodActivity extends AppCompatActivity {
     TextView quote;
     TextView selectdate;
     TextView felt;
+    TextView activity;
     TextView because;
     TextView descbox;
     ImageView calendar;
@@ -51,6 +52,11 @@ public class AddMoodActivity extends AppCompatActivity {
     Button sweat;
     Button worry;
     Button sick;
+    Button read;
+    Button travel;
+    Button family;
+    Button work;
+    Button food;
     Button addmood;
 
 
@@ -58,6 +64,7 @@ public class AddMoodActivity extends AppCompatActivity {
     int boolselect = -1;
 
     String moodtype;
+    String acttype;
 
 
     private DatePickerDialog.OnDateSetListener dateSetListener;
@@ -75,6 +82,7 @@ public class AddMoodActivity extends AppCompatActivity {
 
         selectdate = findViewById(R.id.selectdate);
         felt = findViewById(R.id.felt);
+        activity = findViewById(R.id.activities);
         because = findViewById(R.id.because);
         calendar = findViewById(R.id.calendar);
         descbox = findViewById(R.id.descbox);
@@ -89,6 +97,12 @@ public class AddMoodActivity extends AppCompatActivity {
         sweat = findViewById(R.id.sweat);
         worry = findViewById(R.id.worry);
         sick = findViewById(R.id.sick);
+
+        food = findViewById(R.id.food);
+        family = findViewById(R.id.family);
+        travel = findViewById(R.id.travel);
+        work = findViewById(R.id.work);
+        read = findViewById(R.id.read);
 
         addmood = findViewById(R.id.addmood);
 
@@ -275,15 +289,77 @@ public class AddMoodActivity extends AppCompatActivity {
             }
         });
 
+        read.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                acttype = "read";
+                Toast.makeText(AddMoodActivity.this, "I was reading", Toast.LENGTH_SHORT).show();
+                if(boolselect == 1){
+                    addmood.setEnabled(true);
 
+                }
+            }
+        });
+
+        work.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                acttype = "work";
+                Toast.makeText(AddMoodActivity.this, "I was working", Toast.LENGTH_SHORT).show();
+                if(boolselect == 1){
+                    addmood.setEnabled(true);
+
+                }
+            }
+        });
+
+        travel.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                acttype = "travel";
+                Toast.makeText(AddMoodActivity.this, "I was traveling", Toast.LENGTH_SHORT).show();
+                if(boolselect == 1){
+                    addmood.setEnabled(true);
+
+                }
+            }
+        });
+
+        family.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                acttype = "family";
+                Toast.makeText(AddMoodActivity.this, "I was spending time with my family", Toast.LENGTH_SHORT).show();
+                if(boolselect == 1){
+                    addmood.setEnabled(true);
+
+                }
+            }
+        });
+
+        food.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                acttype = "food";
+                Toast.makeText(AddMoodActivity.this, "I was tasting food", Toast.LENGTH_SHORT).show();
+                if(boolselect == 1){
+                    addmood.setEnabled(true);
+
+                }
+            }
+        });
 
         addmood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int i = v.getId();
                 if (i == R.id.addmood) {
-                    createMood(user, selectdate.getText().toString(), descbox.getText().toString(), moodtype, index);
+                    createMood(user, selectdate.getText().toString(), descbox.getText().toString(), moodtype, acttype, index);
                     index++;
 
                     Intent j = new Intent(getApplicationContext(),MoodTrackerActivity.class);
@@ -297,12 +373,13 @@ public class AddMoodActivity extends AppCompatActivity {
     }
 
 
-    public void createMood(String UID, String date, String desc, String mood, final Integer moodnum) {
+    public void createMood(String UID, String date, String desc, String mood, String act, final Integer moodnum) {
         Map<String, Object> user = new HashMap<>();
         user.put("id", moodnum);
         user.put("date", date);
         user.put("description", desc);
         user.put("moodtype", mood);
+        user.put("acttype", act);
 
 
         db.collection("users").document(UID).collection("moodlog").document().set(user).addOnSuccessListener(this, new OnSuccessListener<Void>() {

@@ -36,13 +36,13 @@ import java.util.ArrayList;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
 
-public class MoodTrackerActivity extends HomeActivity {
+public class MoodTrackerActivity extends MainActivity {
 
     private static int curmoodid;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    TextView title;
     TextView subtitle;
     TextView quote;
     ListView listView;
@@ -50,6 +50,7 @@ public class MoodTrackerActivity extends HomeActivity {
     ArrayList<String> date = new ArrayList<>();
     ArrayList<String> desc = new ArrayList<>();
     ArrayList<String> mood = new ArrayList<>();
+    ArrayList<String> act = new ArrayList<>();
     ArrayList<Integer> moodid = new ArrayList<>();
 
 
@@ -66,7 +67,6 @@ public class MoodTrackerActivity extends HomeActivity {
 
 
         // get access to all the variables
-        title = findViewById(R.id.title);
         subtitle = findViewById(R.id.subtitle);
         quote = findViewById(R.id.titlequote);
 
@@ -104,6 +104,7 @@ public class MoodTrackerActivity extends HomeActivity {
                         date.add(snapshot.getString("date"));
                         desc.add(snapshot.getString("description"));
                         mood.add(snapshot.getString("moodtype"));
+                        act.add(snapshot.getString("acttype"));
                         moodid.add(Integer.valueOf(snapshot.get("id").toString()));
                         Log.d("", "Current data: " + snapshot.getData());
 
@@ -119,7 +120,7 @@ public class MoodTrackerActivity extends HomeActivity {
                     curmoodid =0;
                 }
 
-                Adapter adapter = new Adapter(getApplicationContext(), date, desc, mood);
+                Adapter adapter = new Adapter(getApplicationContext(), date, desc, mood, act);
                 adapter.notifyDataSetChanged();
                 listView.setAdapter(adapter);
             }
@@ -135,14 +136,16 @@ public class MoodTrackerActivity extends HomeActivity {
         ArrayList<String> date;
         ArrayList<String> desc;
         ArrayList<String> mood;
+        ArrayList<String> act;
         Context context;
 
-        Adapter(Context c, ArrayList<String> date, ArrayList<String> desc, ArrayList<String> mood) {
+        Adapter(Context c, ArrayList<String> date, ArrayList<String> desc, ArrayList<String> mood, ArrayList<String> act) {
             super(c, R.layout.activity_mood_item, R.id.date, date);
             this.context = c;
             this.date = date;
             this.desc = desc;
             this.mood = mood;
+            this.act = act;
         }
 
 
@@ -153,6 +156,7 @@ public class MoodTrackerActivity extends HomeActivity {
             TextView vdate = row.findViewById(R.id.date);
             TextView vdesc = row.findViewById(R.id.description);
             ImageView vmood = row.findViewById(R.id.emoji);
+            ImageView vact = row.findViewById(R.id.activity);
 
             vdate.setText(date.get(position));
             vdesc.setText(desc.get(position));
@@ -188,6 +192,23 @@ public class MoodTrackerActivity extends HomeActivity {
                 }
                 if (mood.get(position).equalsIgnoreCase("sick")) {
                     vmood.setImageResource(R.drawable.sick);
+                }
+            }
+            if(act.get(position) != null) {
+                if (act.get(position).equalsIgnoreCase("read")) {
+                    vact.setImageResource(R.drawable.reading);
+                }
+                if (act.get(position).equalsIgnoreCase("family")) {
+                    vact.setImageResource(R.drawable.family);
+                }
+                if (act.get(position).equalsIgnoreCase("travel")) {
+                    vact.setImageResource(R.drawable.travel);
+                }
+                if (act.get(position).equalsIgnoreCase("work")) {
+                    vact.setImageResource(R.drawable.work);
+                }
+                if (act.get(position).equalsIgnoreCase("food")) {
+                    vact.setImageResource(R.drawable.food);
                 }
             }
 

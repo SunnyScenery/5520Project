@@ -18,29 +18,14 @@ import edu.neu.numad22sp_bdd_project.R;
 
 public class ColumnBarChartView extends View {
     private Context mContext;
-    //画笔
     private Paint mPaint=new Paint();
-    //记录绘制数据，key名字,value数量
     private ArrayList<ColumnDataFrom> mArray=new ArrayList<>();
-    //柱状宽度
     private float mWidth=0;
-    //柱状高度
     private float mHeight=0;
-    //柱状位置Rect
     private RectF mRectF = new RectF();
-    //数据名字位置Rect
     private Rect mTextRect=new Rect();
-    /**
-     * 设置柱状间距
-     */
     private int mMargin=30;
-    /**
-     * 设置是否显示数据（柱状名字-数值）
-     */
     private boolean mDisplayData =true;
-    /**
-     * 设置文字颜色
-     */
     private int mTextColor= Color.BLACK;
 
     public ColumnBarChartView(Context context) {
@@ -50,7 +35,6 @@ public class ColumnBarChartView extends View {
     public ColumnBarChartView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         TypedArray typedArray=context.obtainStyledAttributes(attrs, R.styleable.ColumnBarChartView);
-        //设置柱状的间距
         mMargin=typedArray.getInteger(R.styleable.ColumnBarChartView_ColumnBarChart_margin,mMargin);
         mDisplayData =typedArray.getBoolean(R.styleable.ColumnBarChartView_ColumnBarChart_displayData, mDisplayData);
         mTextColor =typedArray.getInteger(R.styleable.ColumnBarChartView_ColumnBarChart_textColor, mTextColor);
@@ -65,7 +49,7 @@ public class ColumnBarChartView extends View {
 
     private void initial(Context context){
         mContext=context;
-        mPaint.setAntiAlias(true); //抗锯齿
+        mPaint.setAntiAlias(true);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(mTextColor);
         setWillNotDraw(false);
@@ -74,7 +58,7 @@ public class ColumnBarChartView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         mWidth = 75;
-        mHeight = ( getHeight() / getNumber() ) + 80; //计算柱状数值的平均高度值
+        mHeight = ( getHeight() / getNumber() ) + 100;
 
 
         for(int i=0;i<mArray.size();i++){
@@ -84,48 +68,47 @@ public class ColumnBarChartView extends View {
             if(mArray.get(i).mNumber == 0) {
                 mRectF.top = 0;
             } else {
-                mRectF.top= mRectF.bottom-mHeight*mArray.get(i).mNumber ; //柱状高度=数值的平均高度值*柱状数值
+                mRectF.top= mRectF.bottom-mHeight*mArray.get(i).mNumber ;
             }
 
-            if(mDisplayData){ //如果设置了展示名字，则绘制名字
-                onDrawName(canvas,i); //画柱状名字
-                onDrawNumber(canvas,i); //画柱状数值
+            if(mDisplayData){
+                onDrawName(canvas,i);
+                onDrawNumber(canvas,i);
             }
-            onDrawColumn(canvas,i); //画柱状图形
+            onDrawColumn(canvas,i);
         }
     }
 
-    //绘制-柱状名字
     private void onDrawName(Canvas canvas,int i){
         mPaint.setTextSize(dip2px(mContext, (float) Math.sqrt(mWidth)));
-        mPaint.getTextBounds(mArray.get(i).mMame, 0, mArray.get(i).mMame.length(), mTextRect); //计算文字位置,处于柱状宽度中间
+        mPaint.getTextBounds(mArray.get(i).mMame, 0, mArray.get(i).mMame.length(), mTextRect);
         mPaint.setColor(mTextColor);
-        canvas.drawText(   //柱状名字
+        canvas.drawText(
                 mArray.get(i).mMame,
                 (mRectF.left+mRectF.right)/2 - (mTextRect.left+mTextRect.right)/2,
                 mRectF.bottom-(mTextRect.bottom-mTextRect.top)/2,
                 mPaint);
 
     }
-    //绘制-柱状数值
+
     private void onDrawNumber(Canvas canvas,int i){
         mPaint.setTextSize(dip2px(mContext, (float) Math.sqrt(mWidth)));
         if(mArray.get(i).mNumber == 0) {
             mPaint.getTextBounds("0.0", 0, "0.0".length(), mTextRect);
         } else {
-            mPaint.getTextBounds(String.valueOf(mArray.get(i).mNumber), 0, String.valueOf(mArray.get(i).mNumber).length(), mTextRect); //计算文字位置,处于柱状宽度中间
+            mPaint.getTextBounds(String.valueOf(mArray.get(i).mNumber), 0, String.valueOf(mArray.get(i).mNumber).length(), mTextRect);
         }
 
         mPaint.setColor(mTextColor);
         if(mArray.get(i).mNumber == 0) {
 
-            canvas.drawText(   //柱状名字
+            canvas.drawText(
                     "0.0",
                     (mRectF.left+mRectF.right)/2 - (mTextRect.left+mTextRect.right)/2,
                     mRectF.bottom - 40,
                     mPaint);
         } else {
-            canvas.drawText(   //柱状名字
+            canvas.drawText(
                     String.valueOf(mArray.get(i).mNumber),
                     (mRectF.left+mRectF.right)/2 - (mTextRect.left+mTextRect.right)/2,
                     mRectF.top,
@@ -134,14 +117,14 @@ public class ColumnBarChartView extends View {
 
 
     }
-    //绘制-柱状图形
+
     private void onDrawColumn(Canvas canvas,int i){
-        if(mDisplayData) { //如果设置了展示名字，则绘制柱状图形的位置要在文字之上
-            mRectF.bottom=mRectF.bottom-dip2px(mContext,(mTextRect.bottom-mTextRect.top)); //柱状底部位置=组件底部-文字高度
+        if(mDisplayData) {
+            mRectF.bottom=mRectF.bottom-dip2px(mContext,(mTextRect.bottom-mTextRect.top));
             if(mArray.get(i).mNumber == 0) {
                 mRectF.top = mRectF.bottom;
             } else {
-                mRectF.top= mRectF.bottom-mHeight*mArray.get(i).mNumber +dip2px(mContext,(mTextRect.bottom-mTextRect.top+2)) ; //柱状高度=数值的平均高度值*柱状数值
+                mRectF.top= mRectF.bottom-mHeight*mArray.get(i).mNumber +dip2px(mContext,(mTextRect.bottom-mTextRect.top+2)) ;
             }
 
         }
@@ -151,22 +134,14 @@ public class ColumnBarChartView extends View {
             drawable.setBounds((int)mRectF.left,(int)mRectF.top,(int)mRectF.right,(int)mRectF.bottom);
             drawable.draw(canvas);
         }catch (Exception e){
-            mPaint.setColor(mArray.get(i).mColorOrDrawable); //柱状颜色
+            mPaint.setColor(mArray.get(i).mColorOrDrawable);
             canvas.drawRect(mRectF,mPaint);
         }
 
 
     }
 
-    /**
-     * 是否显示柱状名称
-     */
-    public void displayName(boolean isDisplay){
-        mDisplayData =isDisplay;
-    }
-    /**
-     * 向外提供添加数据的方法,如果数据名字一样则被替换
-     */
+
     public void addColumnData(ColumnDataFrom columnDataFrom){
         if(null != mArray){
             if(!mArray.contains(columnDataFrom)) {
@@ -175,37 +150,8 @@ public class ColumnBarChartView extends View {
             }
         }
     }
-    /**
-     * 向外提供修改数据的方法
-     */
-    public void editColumnData(String ColumnName,String name,float number,int color){
-        if(null != mArray){
-            if(mArray.contains(ColumnName)){
-                for(int i=0;i<mArray.size();i++){
-                    if(mArray.get(i).mMame.equals(ColumnName)){
-                        mArray.get(i).mMame=name;
-                        mArray.get(i).mNumber=number;
-                        mArray.get(i).mColorOrDrawable =color;
-                    }
-                }
-                refreshUI();
-            }
-        }
-    }
-    /**
-     * 向外提供删除数据的方法
-     */
-    public void deleteColumnData(String ColumnName){
-        if(null != mArray){
-            if(mArray.contains(ColumnName)){
-                mArray.remove(ColumnName);
-                refreshUI();
-            }
-        }
-    }
-    /**
-     * 向外提供删除数据的方法
-     */
+
+
     public void deleteColumnData(int ColumnIndex){
         if(null != mArray){
             if( mArray.size()>ColumnIndex){
@@ -216,9 +162,7 @@ public class ColumnBarChartView extends View {
             }
         }
     }
-    /**
-     * 柱状数据表单
-     */
+
     public static class ColumnDataFrom {
         String mMame;
         float mNumber;
@@ -230,15 +174,12 @@ public class ColumnBarChartView extends View {
         }
     }
 
-    //刷新UI
+
     private void refreshUI(){
         this.invalidate();
     }
 
-    /**
-     * 获取柱状数量
-     * @return
-     */
+
     public int getSize(){
         if(null!=mArray){
             return mArray.size();
@@ -247,10 +188,7 @@ public class ColumnBarChartView extends View {
         }
     }
 
-    /**
-     * 获取所有柱状的数值总数
-     * @return
-     */
+
     public float getNumber(){
         float totalNumber=0;
         for(ColumnDataFrom columnDataFrom : mArray){
@@ -259,7 +197,6 @@ public class ColumnBarChartView extends View {
         return totalNumber;
     }
 
-    //大小转换为px
     public static int dip2px(Context context, float dipValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
