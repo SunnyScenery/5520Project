@@ -11,7 +11,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="#EEF3ED"
+        android:background="#CBDDC3"
         android:orientation="vertical"
         android:paddingTop="30dp">
 

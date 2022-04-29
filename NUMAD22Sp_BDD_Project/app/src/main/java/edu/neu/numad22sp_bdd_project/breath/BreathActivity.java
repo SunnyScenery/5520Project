@@ -10,16 +10,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
+import org.angmarch.views.NiceSpinner;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
 public class BreathActivity extends MainActivity {
 
     private Button btn_start;
-    private Spinner inhale;
-    private Spinner holding;
-    private Spinner exhale;
-    private Spinner cycles;
+    private NiceSpinner inhale;
+    private NiceSpinner holding;
+    private NiceSpinner exhale;
+    private NiceSpinner cycles;
     private LinearLayout breathLayout;
 
 
@@ -35,27 +41,23 @@ public class BreathActivity extends MainActivity {
 
         //inhale
         inhale = findViewById(R.id.inhale);
-        String[] inhaleList = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10"};
-        ArrayAdapter<String> inhaleAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, inhaleList);
-        inhale.setAdapter(inhaleAdapter);
+        List<String> inhaleList = new LinkedList<>(Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10"));
+        inhale.attachDataSource(inhaleList);
 
         //holding
         holding = findViewById(R.id.hold);
-        String[] holdList = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10"};
-        ArrayAdapter<String> holdAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, holdList);
-        holding.setAdapter(holdAdapter);
+        List<String> holdList = new LinkedList<>(Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10"));
+        holding.attachDataSource(holdList);
 
         //exhale
         exhale = findViewById(R.id.exhale);
-        String[] exhaleList = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10"};
-        ArrayAdapter<String> exhaleAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, exhaleList);
-        exhale.setAdapter(exhaleAdapter);
+        List<String> exhaleList = new LinkedList<>(Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10"));
+        exhale.attachDataSource(exhaleList);
 
         //cycles
         cycles = findViewById(R.id.breaths);
-        String[] breathsList = new String[]{"2", "3", "4", "5"};
-        ArrayAdapter<String> cyclesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, breathsList);
-        cycles.setAdapter(cyclesAdapter);
+        List<String> breathsList = new LinkedList<>(Arrays.asList("2", "3", "4", "5"));
+        cycles.attachDataSource(breathsList);
 
         btn_start = findViewById(R.id.btn_start);
         btn_start.setOnClickListener(new View.OnClickListener() {

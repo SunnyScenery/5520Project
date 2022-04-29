@@ -10,15 +10,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="#EEF3ED"
+        android:background="#CBDDC3"
         android:orientation="vertical"
         android:paddingTop="30dp">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="10dp"
             android:clickable="false"
             app:srcCompat="@drawable/logo" />
 
@@ -26,10 +28,9 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="sans-serif-thin"
             android:text="@string/breathing_exercise"
             android:textAlignment="center"
-            android:textColor="#1A237E"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -41,7 +42,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="40dp"
+        android:background="#EEF3ED">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -67,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:gravity="center"
-                    android:text="I want to inhale for:"
+                    android:text="Inhale for:"
                     android:textSize="24dp" />
 
                 <LinearLayout
@@ -77,10 +79,10 @@
                     android:orientation="horizontal">
 
 
-                    <Spinner
+                    <org.angmarch.views.NiceSpinner
                         android:id="@+id/inhale"
-                        android:layout_width="100dp"
-                        android:layout_height="35dp"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="24dp"
@@ -110,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:gravity="center"
-                    android:text="I want to hold for:"
+                    android:text="Hold for:"
                     android:textSize="24dp" />
 
                 <LinearLayout
@@ -119,10 +121,10 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <Spinner
+                    <org.angmarch.views.NiceSpinner
                         android:id="@+id/hold"
-                        android:layout_width="100dp"
-                        android:layout_height="35dp"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="24dp"
@@ -152,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:gravity="center"
-                    android:text="I want to exhale for:"
+                    android:text="Eexhale for:"
                     android:textSize="24dp" />
 
                 <LinearLayout
@@ -161,10 +163,10 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <Spinner
+                    <org.angmarch.views.NiceSpinner
                         android:id="@+id/exhale"
-                        android:layout_width="100dp"
-                        android:layout_height="35dp"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="24dp"
@@ -203,10 +205,10 @@
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
-                    <Spinner
+                    <org.angmarch.views.NiceSpinner
                         android:id="@+id/breaths"
-                        android:layout_width="100dp"
-                        android:layout_height="35dp"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="24dp"
@@ -233,16 +235,16 @@
 
                 <Button
                     android:id="@+id/btn_start"
-                    android:layout_width="wrap_content"
+                    android:layout_width="246dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:backgroundTint="#C0B2E7"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="#F9C984"
                     android:text="@string/start"
                     android:textColor="#664564"
                     android:textColorHint="#664564"
                     android:textColorLink="#664564"
-                    android:textSize="24dp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"

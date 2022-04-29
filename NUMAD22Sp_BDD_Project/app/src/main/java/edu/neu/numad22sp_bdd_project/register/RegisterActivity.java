@@ -11,7 +11,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,7 +24,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import androidx.annotation.NonNull;
@@ -33,6 +35,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import org.angmarch.views.NiceSpinner;
+import org.angmarch.views.OnSpinnerItemSelectedListener;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -43,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private EditText username_EditText;
     private EditText password_EditText;
     private EditText dateOfBirth_EditText;
-    private Spinner gender;
+    private NiceSpinner gender;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,9 +63,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         // Setup dropdown list for gender
         gender = findViewById(R.id.gender);
-        String[] genderList = new String[]{"Male", "Female", "Other", "Prefer not to specify"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, genderList);
-        gender.setAdapter(adapter);
+        List<String> genderList = new LinkedList<>(Arrays.asList("Male", "Female", "Other", "Prefer not to specify"));
+        gender.attachDataSource(genderList);
+
+
+
 
         // Get access to all user input components on UI
         name_EditText = findViewById(R.id.name);
