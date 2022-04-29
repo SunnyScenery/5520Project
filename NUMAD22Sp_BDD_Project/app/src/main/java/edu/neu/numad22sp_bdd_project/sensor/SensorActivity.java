@@ -12,8 +12,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
-public class SensorActivity extends HomeActivity {
+public class SensorActivity extends MainActivity {
 
     private TextView pressureText;
     private TextView reactionText;

@@ -36,6 +36,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -48,7 +49,7 @@ enum State {
     COMPLETE_TASKS
 }
 
-public class TodolistActivity extends HomeActivity {
+public class TodolistActivity extends MainActivity {
 
     private static final String TAG = "TodolistActivity";
 
