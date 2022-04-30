@@ -14,13 +14,14 @@ import edu.neu.numad22sp_bdd_project.adhd.adhdActivity;
 import edu.neu.numad22sp_bdd_project.anxiety.anxietyActivity;
 import edu.neu.numad22sp_bdd_project.bipolar.bipolarActivity;
 import edu.neu.numad22sp_bdd_project.depression.depressionActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 import edu.neu.numad22sp_bdd_project.ocd.ocdActivity;
 import edu.neu.numad22sp_bdd_project.ptsd.ptsdActivity;
 
 
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
 
-public class QuizActivity extends HomeActivity {
+public class QuizActivity extends MainActivity {
 
     Button adhd;
     Button anxiety;

@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import edu.neu.numad22sp_bdd_project.R;
+import edu.neu.numad22sp_bdd_project.moodtracker.MoodTrackerActivity;
 import edu.neu.numad22sp_bdd_project.quiz.QuizActivity;
 import edu.neu.numad22sp_bdd_project.breath.BreathActivity;
 
@@ -18,6 +19,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.widget.Toolbar;
 import edu.neu.numad22sp_bdd_project.sensor.SensorActivity;
+import edu.neu.numad22sp_bdd_project.statistic.TestActivity;
 import edu.neu.numad22sp_bdd_project.todolist.TodolistActivity;
 
 import com.google.android.material.navigation.NavigationView;
@@ -85,6 +87,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent i_breath = new Intent(this, BreathActivity.class);
                 startActivity(i_breath);
                 finish();
+                draw.closeDrawer(GravityCompat.START);
+                break;
+
+            case R.id.nav_mood:
+                Intent i_mood = new Intent(this, MoodTrackerActivity.class);
+                startActivity(i_mood);
+                draw.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.nav_stats:
+                Intent i_stats = new Intent(this, TestActivity.class);
+                startActivity(i_stats);
                 draw.closeDrawer(GravityCompat.START);
                 break;
         }

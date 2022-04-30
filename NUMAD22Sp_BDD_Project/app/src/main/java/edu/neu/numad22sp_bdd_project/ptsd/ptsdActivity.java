@@ -11,8 +11,9 @@ import android.content.Intent;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
-public class ptsdActivity extends HomeActivity {
+public class ptsdActivity extends MainActivity {
 
     private ptsdQuestionModel mQues = new ptsdQuestionModel();
     private TextView mQuesView;

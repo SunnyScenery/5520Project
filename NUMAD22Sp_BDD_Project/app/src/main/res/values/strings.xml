@@ -17,7 +17,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-
     <!--quiz ADHD-->
     <string name="adhd">Test for ADHD</string>
     <string name="adhdOvr">Over the past 6 months...</string>
@@ -131,6 +130,7 @@
     <!--Breath-->
     <string name="breathing_exercise">Breathing exercise</string>
     <string name="start">Start</string>
+    <string name="SelfAssessment">Self-Assessment Quiz</string>
 
 </resources>
 

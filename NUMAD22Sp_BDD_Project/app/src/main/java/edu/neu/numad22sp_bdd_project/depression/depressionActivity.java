@@ -11,8 +11,9 @@ import android.content.Intent;
 
 import edu.neu.numad22sp_bdd_project.R;
 import edu.neu.numad22sp_bdd_project.home.HomeActivity;
+import edu.neu.numad22sp_bdd_project.home.MainActivity;
 
-public class depressionActivity extends HomeActivity {
+public class depressionActivity extends MainActivity {
 
     private depressionQuestionModel mQues = new depressionQuestionModel();
     private TextView mQuesView;
