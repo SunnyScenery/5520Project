@@ -14,26 +14,26 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:paddingTop="30dp"
+        android:layout_height="180dp"
         android:background="#CBDDC3"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="30dp">
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="0dp"
             android:clickable="false"
-            app:srcCompat="@drawable/logo"/>
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:text="Statistic"
             android:textAlignment="center"
-            android:textColor="#1A237E"
-            android:textSize="20sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout

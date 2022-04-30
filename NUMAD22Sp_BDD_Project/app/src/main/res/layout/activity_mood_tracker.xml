@@ -8,10 +8,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="252dp"
-        android:paddingTop="30dp"
+        android:layout_height="180dp"
         android:background="#CBDDC3"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="30dp">
 
         <ImageView
             android:id="@+id/imageView"
@@ -19,17 +19,15 @@
             android:layout_height="50dp"
             android:layout_marginBottom="20dp"
             android:clickable="false"
-            app:srcCompat="@drawable/logo"/>
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/"
-            android:textStyle="bold"
             android:text="Mood Tracker"
             android:textAlignment="center"
-            android:textColor="#1A237E"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/titlequote"
@@ -37,7 +35,6 @@
             android:layout_height="wrap_content"
             android:text='"track your mood, deal with it"'
             android:textAlignment="center"
-            android:textColor="#1A237E"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -47,11 +44,10 @@
         android:id="@+id/moodlist"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="-60dp"
-        android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/mood_tracker_background"/>
+        android:background="@drawable/mood_tracker_background" />
     <Button
         android:id="@+id/addmood"
         android:layout_width="40sp"

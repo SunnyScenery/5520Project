@@ -38,6 +38,7 @@ public class SensorActivity extends MainActivity {
     private SensorEventListener sensorEventListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
+
             float[] values = event.values;
             pressureText.setText(locationText + String.format("The pressure is %.3f mbar", values[0]));
             if (values[0] < 1009.144) {
@@ -66,9 +67,16 @@ public class SensorActivity extends MainActivity {
 
         // gps service
         LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
         Location location = getLocation(lm);
-        locationText = "The longitude is " + String.valueOf(location.getLongitude()) +
-                "\r\n" + "The latitude is " + String.valueOf(location.getLatitude()) + "\r\n";
+
+        if (location == null) {
+            locationText = "The GPS service is " + "not available currently, please check and retry" +
+                    "\r\n";
+        } else {
+            locationText = "The longitude is " + String.valueOf(location.getLongitude()) +
+                    "\r\n" + "The latitude is " + String.valueOf(location.getLatitude()) + "\r\n";
+        }
 
 
 
